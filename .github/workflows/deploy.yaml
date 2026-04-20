@@ -31,6 +31,6 @@ jobs:
           username: ${{ secrets.VPS_USERNAME }}
           key: ${{ secrets.VPS_SSH_KEY }}
           script: |
-            cd /home/ubuntu/Memoria/Memoria-archi
+            cd ~/Memoria-Architecture
             docker compose pull
             docker compose up -d
