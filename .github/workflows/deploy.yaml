@@ -1,0 +1,36 @@
+name: Déploiement Automatique en Production
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      # 1. Le robot récupère le code de manière sécurisée
+      - name: Checkout du code
+        uses: actions/checkout@v4
+
+      # 2. Il transfère le fichier yaml directement sur ton VPS !
+      - name: Envoi du fichier vers le VPS
+        uses: appleboy/scp-action@master
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SSH_KEY }}
+          source: "docker-compose.yaml,.env.example" 
+          target: "/home/ubuntu/Memoria/Memoria-archi"
+
+      # 3. Il lance tes conteneurs avec le Docker moderne
+      - name: Lancement de Docker
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SSH_KEY }}
+          script: |
+            cd /home/ubuntu/Memoria/Memoria-archi
+            docker compose pull
+            docker compose up -d
