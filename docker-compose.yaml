@@ -29,8 +29,7 @@ services:
       - DATABASE_URL=mysql://${DB_USER}:${DB_PASSWORD}@database:3306/Memoria
       - FASTAPI_URL=http://ia-backend:8001
     volumes:
-      # Symfony a besoin de lire et écrire pour utiliser la clé privée
-      - ./certs:/app/config/jwt
+      - ./certs:/var/www/html/config/jwt
 
   # 3. L'IA (FastAPI)
   ia-backend:
