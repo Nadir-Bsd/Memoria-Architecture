@@ -38,6 +38,8 @@ services:
     container_name: memoria-ia
     env_file:
       - .env
+    environment:
+      - JWT_PUBLIC_KEY=/app/certs/public.pem
     volumes:
       - ./certs:/app/certs:ro
 
