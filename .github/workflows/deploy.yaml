@@ -21,7 +21,7 @@ jobs:
           username: ${{ secrets.VPS_USERNAME }}
           key: ${{ secrets.VPS_SSH_KEY }}
           source: "docker-compose.yaml,.env.example" 
-          target: "/home/ubuntu/Memoria/Memoria-archi"
+          target: "/home/ubuntu/Memoria/Memoria-Architecture"
 
       # 3. Il lance tes conteneurs avec le Docker moderne
       - name: Lancement de Docker
