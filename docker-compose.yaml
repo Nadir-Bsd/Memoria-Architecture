@@ -30,7 +30,6 @@ services:
       - FASTAPI_URL=http://ia-backend:8001
     volumes:
       - ./certs:/var/www/html/config/jwt
-      - ./apache-timeout.conf:/etc/apache2/conf-enabled/timeout.conf:ro
       
   # 3. L'IA (FastAPI)
   ia-backend:
