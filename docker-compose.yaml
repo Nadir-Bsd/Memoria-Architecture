@@ -28,16 +28,20 @@ services:
       - MYSQL_PASSWORD=${DB_PASSWORD}
       - DATABASE_URL=mysql://${DB_USER}:${DB_PASSWORD}@database:3306/Memoria
       - FASTAPI_URL=http://ia-backend:8001
-
+    volumes:
+      - ./certs:/var/www/html/config/jwt
+      
   # 3. L'IA (FastAPI)
   ia-backend:
     image: ghcr.io/nadir-bsd/memoria-ia-backend:latest
     container_name: memoria-ia
     env_file:
       - .env
+    environment:
+      - JWT_PUBLIC_KEY=/app/certs/public.pem
     volumes:
       - ./certs:/app/certs:ro
-      
+
   # 4. La Base de Données
   database:
     image: mysql:8.4
