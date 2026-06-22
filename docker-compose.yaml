@@ -40,6 +40,7 @@ services:
       - .env
     environment:
       - JWT_PUBLIC_KEY=/app/certs/public.pem
+      - FASTAPI_URL=http://ia-backend:8001
     volumes:
       - ./certs:/app/certs:ro
 
