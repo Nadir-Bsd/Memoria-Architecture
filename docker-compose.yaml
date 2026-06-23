@@ -16,6 +16,8 @@ services:
   frontend:
     image: ghcr.io/nadir-bsd/memoria-frontend:latest
     container_name: memoria-frontend
+    environment:
+      - NEXT_PUBLIC_FASTAPI_URL=http://ia-backend:8001
 
   # 2. Le Backend (Symfony)
   backend:
