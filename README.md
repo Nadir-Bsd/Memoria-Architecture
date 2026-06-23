@@ -38,18 +38,3 @@ Une attention particulière a été portée à la qualité et à la maintenabili
 * **Python (FastAPI / IA) :** `pytest` (Tests), `pylint` & `ruff` (Linting/Formatting).
 * **PHP (Symfony) :** `phpstan` (Analyse statique niveau 6), `phpcbf` (Formatage), `phpunit` (Tests).
 * **Frontend :** `ESLint`.
-
-## 🛠️ Installation et Lancement
-
-Pour simplifier les manipulations, les commandes complexes ont été automatisées via un `Makefile`.
-
-```bash
-# 1. Cloner les différents dépôts (ou le monorepo)
-git clone [URL_DE_TON_REPO]
-
-# 2. Utiliser le Makefile pour lancer l'environnement complet via Docker
-make build
-make up
-
-# 3. Lancer les vérifications de qualité de code
-make check-quality
