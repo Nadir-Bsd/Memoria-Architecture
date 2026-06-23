@@ -1,6 +1,7 @@
 # 🚀 Memoria - AI-Powered Web Application & Infrastructure
 
-![Architecture](lien_vers_ton_image_architecture.png) **
+<img width="1447" height="736" alt="Gemini_Generated_Image_b99fgyb99fgyb99f" src="https://github.com/user-attachments/assets/86fe409a-798f-4835-9560-134763b4573a" />
+<img width="266" height="520" alt="Capture d&#39;écran 2026-06-22 115506" src="https://github.com/user-attachments/assets/53bd4594-82ba-4438-aee8-2b9fc6611e2b" />
 
 > **À propos** : **Memoria** est un projet full-stack conçu et réalisé de A à Z dans le cadre de ma 3ème année (Bac+3). Mon objectif principal avec ce projet était de sortir de ma zone de confort et de me confronter aux réalités de la production : **l'architecture, la conteneurisation globale via Docker et le déploiement sur un VPS dédié ont été entièrement réalisés en auto-formation**. 
 > 
